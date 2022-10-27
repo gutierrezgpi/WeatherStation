@@ -1,0 +1,6 @@
+sudo apt install libgpiod2
+sudo apt install -y python-smbus
+sudo apt install -y i2c-tools
+
+pip install adafruit-circuitpython-dht
+pip install adafruit-circuitpython-bmp280

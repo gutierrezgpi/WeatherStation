@@ -1,0 +1,12 @@
+# Detectar conexao i2c
+i2cdetect -y 1
+
+# Ambiente virtual
+python3 -m venv venv
+
+# Atalho linux
+ln -s venv/bin/activate ./activate_venv
+
+# Atualizar pip
+pip install --upgrade pip setuptools wheel
+python -m pip install --upgrade pip setuptools wheel
