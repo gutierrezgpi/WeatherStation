@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Server</title>
+    <style>
+        
+        * {
+            /* font-family: 'Consolas', 'Courier New', monospace; */
+            /* font-family: 'Courier New', Courier, monospace; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+
+            color: #adbac7;
+        }
+
+        body {
+            background-color: #22272E;
+        }
+
+        table, th, td {
+            border: 1px solid #adbac7;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+
+        input:disabled {
+            border: 1px solid #adbac7;
+            background-color: #22272E;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Pi Server</h1>
+    <label for="id">Id:</label>
+    <input type="text" id="id" name="id" disabled value="{{ now[0] }}">
+    <label for="timestamp">Timestamp:</label>
+    <input type="text" id="timestamp" name="timestamp" disabled value="{{ now[1][:19] }}">
+    <label for="prev_duration">Tempo de captura anterior:</label>
+    <input type="text" id="prev_duration" name="prev_duration" disabled value="{{ now[2] }}"><br><br>
+
+    <h2>Temperatura e Umidade</h2>
+    <label for="bmp_temp">Temperatura BMP:</label>
+    <input type="text" id="bmp_temp" name="bmp_temp" disabled value="{{ now[3] }}ºC">
+    <label for="dht_temp">Temperatura DHT:</label>
+    <input type="text" id="dht_temp" name="dht_temp" disabled value="{{ now[4] }}ºC"><br><br>
+    <label for="humidity">Umidade:</label>
+    <input type="text" id="humidity" name="humidity" disabled value="{{ now[5] }}%"><br><br>
+    <label for="ic">Índice de Calor:</label>
+    <input type="text" id="ic" name="ic" disabled value="{{ now[6] }}ºF">
+
+    <h3>Tabela de Índice de calor</h3>
+
+    <table>
+        <tr>
+            <th>Classificação</th>
+            <th>Índice de Calor</th>
+            <th>Efeito no corpo</th>
+        </tr>
+        <tr>
+            <td>Cuidado</td>
+            <td>80°F ~ 90°F</td>
+            <td>Fadiga possível com exposição prolongada e/ou atividade física</td>
+        </tr>
+        <tr>
+            <td>Cuidado Extremo</td>
+            <td>90°F ~ 103°F</td>
+            <td>Insolação, cãibras de calor ou exaustão pelo calor possível com exposição prolongada e/ou atividade física</td>
+        </tr>
+        <tr>
+            <td>Perigo</td>
+            <td>103°F ~ 124°F</td>
+            <td>Cãibras de calor ou exaustão de calor provável, e possível insolação com exposição prolongada e/ou atividade física</td>
+        </tr>
+        <tr>
+            <td>Perigo Extremo</td>
+            <td>125°F ou superior</td>
+            <td>Insolação muito provável</td>
+        </tr>
+    </table>
+
+    <h4>Referencias</h4>
+    <a href="https://www.weather.gov/ama/heatindex">What is the heat index?</a><br>
+    <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_calor">Índice de calor - Wikipedia</a><br>
+    <a href="https://en.wikipedia.org/wiki/Heat_index">Heat index - Wikipedia</a>
+
+    <h2>Pressão atmosférica</h2>
+    <label for="pressure">Pressão:</label>
+    <input type="text" id="pressure" name="pressure" disabled value="{{ now[7] }} Pa">
+    <label for="altitude">Altitude:</label>
+    <input type="text" id="altitude" name="altitude" disabled value="{{ now[8] }} m"><br><br>
+
+    <h2>Placa</h2>
+    <label for="cpu_use">Uso da CPU:</label>
+    <input type="text" id="cpu_use" name="cpu_use" disabled value="{{ now[9] }} %">
+    <label for="cpu_temp">Temperatura CPU:</label>
+    <input type="text" id="cpu_temp" name="cpu_temp" disabled value="{{ now[10] }} ºC">
+    <label for="mem_used">Uso da Memoria:</label>
+    <input type="text" id="mem_used" name="mem_used" disabled value="{{ now[11] }} MB"><br><br>
+
+</body>
+</html>

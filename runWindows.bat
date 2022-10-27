@@ -1,0 +1,9 @@
+@ECHO OFF
+
+CD /d %~dp0
+
+SET FLASK_DEBUG=True
+
+SET FLASK_APP=server.py
+
+flask run --host=0.0.0.0 --port=80

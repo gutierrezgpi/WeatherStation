@@ -4,3 +4,5 @@ sudo apt install -y i2c-tools
 
 pip install adafruit-circuitpython-dht
 pip install adafruit-circuitpython-bmp280
+
+pip install flask
