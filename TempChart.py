@@ -4,7 +4,7 @@ from dateutil import parser
 import numpy as np
 import datalogger1 as dl
 
-date = "2022-10-25"
+date = "2022-10-26"
 
 dl.convert(date)
 
