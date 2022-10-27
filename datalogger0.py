@@ -4,6 +4,7 @@ import adafruit_dht
 
 from os import path
 from os import popen
+from os import mkdir
 from datetime import datetime
 from time import sleep
 
@@ -25,6 +26,11 @@ def receive() :
     prev_timestamp = datetime.now()
 
     sleep(2)
+    
+    if (not path.exists("log")) :
+        mkdir("log")
+    if (not path.exists("data")) :
+        mkdir("data")
 
     # Log
     timestamp = str(datetime.now())
