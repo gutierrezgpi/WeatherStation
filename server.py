@@ -22,4 +22,6 @@ def index():
 
     now = data_file[data_file_size-1]
     
-    return render_template('index.html', now=now)
+    icc = round((float(now[6])-32)/1.8, 2)
+    
+    return render_template('index.html', now=now, icc=icc)

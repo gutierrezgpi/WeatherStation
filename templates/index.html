@@ -57,7 +57,7 @@
     <label for="humidity">Umidade:</label>
     <input type="text" id="humidity" name="humidity" disabled value="{{ now[5] }}%"><br><br>
     <label for="ic">Índice de Calor:</label>
-    <input type="text" id="ic" name="ic" disabled value="{{ now[6] }}ºF">
+    <input type="text" id="ic" name="ic" disabled value="{{ now[6] }}ºF / {{ icc }}ºC">
 
     <h3>Tabela de Índice de calor</h3>
 
@@ -92,7 +92,8 @@
     <h4>Referencias</h4>
     <a href="https://www.weather.gov/ama/heatindex">What is the heat index?</a><br>
     <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_calor">Índice de calor - Wikipedia</a><br>
-    <a href="https://en.wikipedia.org/wiki/Heat_index">Heat index - Wikipedia</a>
+    <a href="https://en.wikipedia.org/wiki/Heat_index">Heat index - Wikipedia</a><br>
+    <a href="https://www.wpc.ncep.noaa.gov/html/heatindex.shtml">Heat Index Calculation</a>
 
     <h2>Pressão atmosférica</h2>
     <label for="pressure">Pressão:</label>
